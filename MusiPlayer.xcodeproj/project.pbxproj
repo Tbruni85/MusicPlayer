@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40411A652C00AF0D00AE2962 /* MusiPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411A642C00AF0D00AE2962 /* MusiPlayerApp.swift */; };
+		40411A672C00AF0D00AE2962 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411A662C00AF0D00AE2962 /* ContentView.swift */; };
+		40411A692C00AF0E00AE2962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40411A682C00AF0E00AE2962 /* Assets.xcassets */; };
+		40411A6C2C00AF0E00AE2962 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40411A6B2C00AF0E00AE2962 /* Preview Assets.xcassets */; };
+		40411A762C00AF0E00AE2962 /* MusiPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411A752C00AF0E00AE2962 /* MusiPlayerTests.swift */; };
+		40411A802C00AF0E00AE2962 /* MusiPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411A7F2C00AF0E00AE2962 /* MusiPlayerUITests.swift */; };
+		40411A822C00AF0E00AE2962 /* MusiPlayerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411A812C00AF0E00AE2962 /* MusiPlayerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		40411A722C00AF0E00AE2962 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40411A592C00AF0D00AE2962 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40411A602C00AF0D00AE2962;
+			remoteInfo = MusiPlayer;
+		};
+		40411A7C2C00AF0E00AE2962 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40411A592C00AF0D00AE2962 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40411A602C00AF0D00AE2962;
+			remoteInfo = MusiPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		40411A612C00AF0D00AE2962 /* MusiPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusiPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40411A642C00AF0D00AE2962 /* MusiPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusiPlayerApp.swift; sourceTree = "<group>"; };
+		40411A662C00AF0D00AE2962 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		40411A682C00AF0E00AE2962 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		40411A6B2C00AF0E00AE2962 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		40411A712C00AF0E00AE2962 /* MusiPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusiPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40411A752C00AF0E00AE2962 /* MusiPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusiPlayerTests.swift; sourceTree = "<group>"; };
+		40411A7B2C00AF0E00AE2962 /* MusiPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusiPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40411A7F2C00AF0E00AE2962 /* MusiPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusiPlayerUITests.swift; sourceTree = "<group>"; };
+		40411A812C00AF0E00AE2962 /* MusiPlayerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusiPlayerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40411A5E2C00AF0D00AE2962 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40411A6E2C00AF0E00AE2962 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40411A782C00AF0E00AE2962 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40411A582C00AF0D00AE2962 = {
+			isa = PBXGroup;
+			children = (
+				40411A632C00AF0D00AE2962 /* MusiPlayer */,
+				40411A742C00AF0E00AE2962 /* MusiPlayerTests */,
+				40411A7E2C00AF0E00AE2962 /* MusiPlayerUITests */,
+				40411A622C00AF0D00AE2962 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40411A622C00AF0D00AE2962 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40411A612C00AF0D00AE2962 /* MusiPlayer.app */,
+				40411A712C00AF0E00AE2962 /* MusiPlayerTests.xctest */,
+				40411A7B2C00AF0E00AE2962 /* MusiPlayerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40411A632C00AF0D00AE2962 /* MusiPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				40411A642C00AF0D00AE2962 /* MusiPlayerApp.swift */,
+				40411A662C00AF0D00AE2962 /* ContentView.swift */,
+				40411A682C00AF0E00AE2962 /* Assets.xcassets */,
+				40411A6A2C00AF0E00AE2962 /* Preview Content */,
+			);
+			path = MusiPlayer;
+			sourceTree = "<group>";
+		};
+		40411A6A2C00AF0E00AE2962 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				40411A6B2C00AF0E00AE2962 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		40411A742C00AF0E00AE2962 /* MusiPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				40411A752C00AF0E00AE2962 /* MusiPlayerTests.swift */,
+			);
+			path = MusiPlayerTests;
+			sourceTree = "<group>";
+		};
+		40411A7E2C00AF0E00AE2962 /* MusiPlayerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				40411A7F2C00AF0E00AE2962 /* MusiPlayerUITests.swift */,
+				40411A812C00AF0E00AE2962 /* MusiPlayerUITestsLaunchTests.swift */,
+			);
+			path = MusiPlayerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40411A602C00AF0D00AE2962 /* MusiPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40411A852C00AF0E00AE2962 /* Build configuration list for PBXNativeTarget "MusiPlayer" */;
+			buildPhases = (
+				40411A5D2C00AF0D00AE2962 /* Sources */,
+				40411A5E2C00AF0D00AE2962 /* Frameworks */,
+				40411A5F2C00AF0D00AE2962 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MusiPlayer;
+			productName = MusiPlayer;
+			productReference = 40411A612C00AF0D00AE2962 /* MusiPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		40411A702C00AF0E00AE2962 /* MusiPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40411A882C00AF0E00AE2962 /* Build configuration list for PBXNativeTarget "MusiPlayerTests" */;
+			buildPhases = (
+				40411A6D2C00AF0E00AE2962 /* Sources */,
+				40411A6E2C00AF0E00AE2962 /* Frameworks */,
+				40411A6F2C00AF0E00AE2962 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40411A732C00AF0E00AE2962 /* PBXTargetDependency */,
+			);
+			name = MusiPlayerTests;
+			productName = MusiPlayerTests;
+			productReference = 40411A712C00AF0E00AE2962 /* MusiPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		40411A7A2C00AF0E00AE2962 /* MusiPlayerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40411A8B2C00AF0E00AE2962 /* Build configuration list for PBXNativeTarget "MusiPlayerUITests" */;
+			buildPhases = (
+				40411A772C00AF0E00AE2962 /* Sources */,
+				40411A782C00AF0E00AE2962 /* Frameworks */,
+				40411A792C00AF0E00AE2962 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40411A7D2C00AF0E00AE2962 /* PBXTargetDependency */,
+			);
+			name = MusiPlayerUITests;
+			productName = MusiPlayerUITests;
+			productReference = 40411A7B2C00AF0E00AE2962 /* MusiPlayerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40411A592C00AF0D00AE2962 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					40411A602C00AF0D00AE2962 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					40411A702C00AF0E00AE2962 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 40411A602C00AF0D00AE2962;
+					};
+					40411A7A2C00AF0E00AE2962 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 40411A602C00AF0D00AE2962;
+					};
+				};
+			};
+			buildConfigurationList = 40411A5C2C00AF0D00AE2962 /* Build configuration list for PBXProject "MusiPlayer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 40411A582C00AF0D00AE2962;
+			productRefGroup = 40411A622C00AF0D00AE2962 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40411A602C00AF0D00AE2962 /* MusiPlayer */,
+				40411A702C00AF0E00AE2962 /* MusiPlayerTests */,
+				40411A7A2C00AF0E00AE2962 /* MusiPlayerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		40411A5F2C00AF0D00AE2962 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40411A6C2C00AF0E00AE2962 /* Preview Assets.xcassets in Resources */,
+				40411A692C00AF0E00AE2962 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40411A6F2C00AF0E00AE2962 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40411A792C00AF0E00AE2962 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40411A5D2C00AF0D00AE2962 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40411A672C00AF0D00AE2962 /* ContentView.swift in Sources */,
+				40411A652C00AF0D00AE2962 /* MusiPlayerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40411A6D2C00AF0E00AE2962 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40411A762C00AF0E00AE2962 /* MusiPlayerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40411A772C00AF0E00AE2962 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40411A802C00AF0E00AE2962 /* MusiPlayerUITests.swift in Sources */,
+				40411A822C00AF0E00AE2962 /* MusiPlayerUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		40411A732C00AF0E00AE2962 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40411A602C00AF0D00AE2962 /* MusiPlayer */;
+			targetProxy = 40411A722C00AF0E00AE2962 /* PBXContainerItemProxy */;
+		};
+		40411A7D2C00AF0E00AE2962 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40411A602C00AF0D00AE2962 /* MusiPlayer */;
+			targetProxy = 40411A7C2C00AF0E00AE2962 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		40411A832C00AF0E00AE2962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		40411A842C00AF0E00AE2962 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40411A862C00AF0E00AE2962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MusiPlayer/Preview Content\"";
+				DEVELOPMENT_TEAM = HNQE3Z56AG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tbruni.MusiPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		40411A872C00AF0E00AE2962 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MusiPlayer/Preview Content\"";
+				DEVELOPMENT_TEAM = HNQE3Z56AG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tbruni.MusiPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		40411A892C00AF0E00AE2962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HNQE3Z56AG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tbruni.MusiPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusiPlayer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MusiPlayer";
+			};
+			name = Debug;
+		};
+		40411A8A2C00AF0E00AE2962 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HNQE3Z56AG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tbruni.MusiPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusiPlayer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MusiPlayer";
+			};
+			name = Release;
+		};
+		40411A8C2C00AF0E00AE2962 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HNQE3Z56AG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tbruni.MusiPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MusiPlayer;
+			};
+			name = Debug;
+		};
+		40411A8D2C00AF0E00AE2962 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HNQE3Z56AG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tbruni.MusiPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MusiPlayer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40411A5C2C00AF0D00AE2962 /* Build configuration list for PBXProject "MusiPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40411A832C00AF0E00AE2962 /* Debug */,
+				40411A842C00AF0E00AE2962 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40411A852C00AF0E00AE2962 /* Build configuration list for PBXNativeTarget "MusiPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40411A862C00AF0E00AE2962 /* Debug */,
+				40411A872C00AF0E00AE2962 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40411A882C00AF0E00AE2962 /* Build configuration list for PBXNativeTarget "MusiPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40411A892C00AF0E00AE2962 /* Debug */,
+				40411A8A2C00AF0E00AE2962 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40411A8B2C00AF0E00AE2962 /* Build configuration list for PBXNativeTarget "MusiPlayerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40411A8C2C00AF0E00AE2962 /* Debug */,
+				40411A8D2C00AF0E00AE2962 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40411A592C00AF0D00AE2962 /* Project object */;
+}
