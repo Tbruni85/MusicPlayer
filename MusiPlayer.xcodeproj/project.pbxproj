@@ -14,6 +14,9 @@
 		40411A762C00AF0E00AE2962 /* MusiPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411A752C00AF0E00AE2962 /* MusiPlayerTests.swift */; };
 		40411A802C00AF0E00AE2962 /* MusiPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411A7F2C00AF0E00AE2962 /* MusiPlayerUITests.swift */; };
 		40411A822C00AF0E00AE2962 /* MusiPlayerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40411A812C00AF0E00AE2962 /* MusiPlayerUITestsLaunchTests.swift */; };
+		407A79CF2C02095000F7D7FF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407A79CE2C02095000F7D7FF /* Home.swift */; };
+		407A79D12C020B4C00F7D7FF /* BottomSheetPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407A79D02C020B4C00F7D7FF /* BottomSheetPlayer.swift */; };
+		407A79D32C020CC500F7D7FF /* MusicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407A79D22C020CC500F7D7FF /* MusicInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		40411A7B2C00AF0E00AE2962 /* MusiPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusiPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40411A7F2C00AF0E00AE2962 /* MusiPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusiPlayerUITests.swift; sourceTree = "<group>"; };
 		40411A812C00AF0E00AE2962 /* MusiPlayerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusiPlayerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		407A79CE2C02095000F7D7FF /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		407A79D02C020B4C00F7D7FF /* BottomSheetPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPlayer.swift; sourceTree = "<group>"; };
+		407A79D22C020CC500F7D7FF /* MusicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,7 @@
 		40411A632C00AF0D00AE2962 /* MusiPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				407A79CD2C02094300F7D7FF /* Views */,
 				40411A642C00AF0D00AE2962 /* MusiPlayerApp.swift */,
 				40411A662C00AF0D00AE2962 /* ContentView.swift */,
 				40411A682C00AF0E00AE2962 /* Assets.xcassets */,
@@ -125,6 +132,16 @@
 				40411A812C00AF0E00AE2962 /* MusiPlayerUITestsLaunchTests.swift */,
 			);
 			path = MusiPlayerUITests;
+			sourceTree = "<group>";
+		};
+		407A79CD2C02094300F7D7FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				407A79CE2C02095000F7D7FF /* Home.swift */,
+				407A79D02C020B4C00F7D7FF /* BottomSheetPlayer.swift */,
+				407A79D22C020CC500F7D7FF /* MusicInfo.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				40411A672C00AF0D00AE2962 /* ContentView.swift in Sources */,
+				407A79D12C020B4C00F7D7FF /* BottomSheetPlayer.swift in Sources */,
+				407A79D32C020CC500F7D7FF /* MusicInfo.swift in Sources */,
+				407A79CF2C02095000F7D7FF /* Home.swift in Sources */,
 				40411A652C00AF0D00AE2962 /* MusiPlayerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
