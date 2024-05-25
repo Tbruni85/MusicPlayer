@@ -17,6 +17,7 @@
 		407A79CF2C02095000F7D7FF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407A79CE2C02095000F7D7FF /* Home.swift */; };
 		407A79D12C020B4C00F7D7FF /* BottomSheetPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407A79D02C020B4C00F7D7FF /* BottomSheetPlayer.swift */; };
 		407A79D32C020CC500F7D7FF /* MusicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407A79D22C020CC500F7D7FF /* MusicInfo.swift */; };
+		407A79D52C02150400F7D7FF /* ExpandedPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407A79D42C02150400F7D7FF /* ExpandedPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		407A79CE2C02095000F7D7FF /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		407A79D02C020B4C00F7D7FF /* BottomSheetPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPlayer.swift; sourceTree = "<group>"; };
 		407A79D22C020CC500F7D7FF /* MusicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInfo.swift; sourceTree = "<group>"; };
+		407A79D42C02150400F7D7FF /* ExpandedPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				407A79CE2C02095000F7D7FF /* Home.swift */,
 				407A79D02C020B4C00F7D7FF /* BottomSheetPlayer.swift */,
 				407A79D22C020CC500F7D7FF /* MusicInfo.swift */,
+				407A79D42C02150400F7D7FF /* ExpandedPlayer.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40411A672C00AF0D00AE2962 /* ContentView.swift in Sources */,
+				407A79D52C02150400F7D7FF /* ExpandedPlayer.swift in Sources */,
 				407A79D12C020B4C00F7D7FF /* BottomSheetPlayer.swift in Sources */,
 				407A79D32C020CC500F7D7FF /* MusicInfo.swift in Sources */,
 				407A79CF2C02095000F7D7FF /* Home.swift in Sources */,

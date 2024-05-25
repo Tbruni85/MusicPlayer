@@ -14,18 +14,24 @@ struct BottomSheetPlayer: View {
     
     var body: some View {
         ZStack {
-            Rectangle()
-                .fill(.ultraThickMaterial)
-                .frame(height: 70)
-                .overlay(alignment: .bottom, content: {
-                    Rectangle()
-                        .fill(.gray.opacity(0.3))
-                        .frame(height: 1)
-                        .offset(y: -5)
-                })
-                .overlay {
-                    MusicInfo(expandSheet: $expandSheet, animation: animation)
-                }
+            if expandSheet {
+                Rectangle()
+                    .fill(.clear)
+            } else {
+                Rectangle()
+                    .fill(.ultraThickMaterial)
+                    .frame(height: 70)
+                    .overlay(alignment: .bottom, content: {
+                        Rectangle()
+                            .fill(.gray.opacity(0.3))
+                            .frame(height: 1)
+                            .offset(y: -5)
+                    })
+                    .overlay {
+                        MusicInfo(expandSheet: $expandSheet, animation: animation)
+                    }
+                    .matchedGeometryEffect(id: "BGVIEW", in: animation)
+            }
         }
     }
 }

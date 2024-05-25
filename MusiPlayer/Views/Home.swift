@@ -28,16 +28,27 @@ struct Home: View {
             BottomSheetPlayer(expandSheet: $expandSheet, animation: animation)
                 .offset(y: -Constants.defaultTabBarHeight)
         }
+        .overlay {
+            if expandSheet {
+                ExpandedPlayer(expandSheet: $expandSheet, animation: animation)
+                    .transition(.asymmetric(insertion: .identity, removal: .offset(y: -5)))
+            }
+        }
     }
     
     @ViewBuilder func sampleTab(title: String, image: String) -> some View {
-        Text(title)
-            .tabItem {
-                Image(systemName: image)
-                Text(title)
-            }
-            .toolbarBackground(.visible, for: .tabBar)
-            .toolbarBackground(.ultraThinMaterial, for: .tabBar)
+        // iOS bug when animating tabBar items, avoided using a ScrollView as wrapper
+        ScrollView(.vertical, showsIndicators: false) {
+            Text(title)
+                .padding(.top, 25)
+        }
+        .tabItem {
+            Image(systemName: image)
+            Text(title)
+        }
+        .toolbarBackground(.visible, for: .tabBar)
+        .toolbarBackground(.ultraThinMaterial, for: .tabBar)
+        .toolbar(expandSheet ? .hidden : .visible, for: .tabBar)
     }
 }
 
