@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct MusiPlayerApp: App {
+struct MusicPlayerApp: App {
     
     @StateObject var audioViewModel = AudioPlayerViewModel()
     
