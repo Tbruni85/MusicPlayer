@@ -18,6 +18,8 @@
 		407A79D12C020B4C00F7D7FF /* BottomSheetPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407A79D02C020B4C00F7D7FF /* BottomSheetPlayer.swift */; };
 		407A79D32C020CC500F7D7FF /* MusicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407A79D22C020CC500F7D7FF /* MusicInfo.swift */; };
 		407A79D52C02150400F7D7FF /* ExpandedPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407A79D42C02150400F7D7FF /* ExpandedPlayer.swift */; };
+		407A79D72C035ABF00F7D7FF /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407A79D62C035ABF00F7D7FF /* PlayerView.swift */; };
+		407A79D92C03638800F7D7FF /* View_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407A79D82C03638700F7D7FF /* View_Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		407A79D02C020B4C00F7D7FF /* BottomSheetPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetPlayer.swift; sourceTree = "<group>"; };
 		407A79D22C020CC500F7D7FF /* MusicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInfo.swift; sourceTree = "<group>"; };
 		407A79D42C02150400F7D7FF /* ExpandedPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedPlayer.swift; sourceTree = "<group>"; };
+		407A79D62C035ABF00F7D7FF /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		407A79D82C03638700F7D7FF /* View_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View_Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 				40411A662C00AF0D00AE2962 /* ContentView.swift */,
 				40411A682C00AF0E00AE2962 /* Assets.xcassets */,
 				40411A6A2C00AF0E00AE2962 /* Preview Content */,
+				407A79D82C03638700F7D7FF /* View_Extension.swift */,
 			);
 			path = MusiPlayer;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 				407A79D02C020B4C00F7D7FF /* BottomSheetPlayer.swift */,
 				407A79D22C020CC500F7D7FF /* MusicInfo.swift */,
 				407A79D42C02150400F7D7FF /* ExpandedPlayer.swift */,
+				407A79D62C035ABF00F7D7FF /* PlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,9 +285,11 @@
 			files = (
 				40411A672C00AF0D00AE2962 /* ContentView.swift in Sources */,
 				407A79D52C02150400F7D7FF /* ExpandedPlayer.swift in Sources */,
+				407A79D72C035ABF00F7D7FF /* PlayerView.swift in Sources */,
 				407A79D12C020B4C00F7D7FF /* BottomSheetPlayer.swift in Sources */,
 				407A79D32C020CC500F7D7FF /* MusicInfo.swift in Sources */,
 				407A79CF2C02095000F7D7FF /* Home.swift in Sources */,
+				407A79D92C03638800F7D7FF /* View_Extension.swift in Sources */,
 				40411A652C00AF0D00AE2962 /* MusiPlayerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

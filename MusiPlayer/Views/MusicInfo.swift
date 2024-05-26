@@ -22,6 +22,10 @@ struct MusicInfo: View {
         static let artworkFrame: CGSize = CGSize(width: 45, height: 45)
         
         static let animationDuration = 0.3
+        
+        static func imageArtworkCornerRaius(_ expandSheet: Bool) -> CGFloat {
+            expandSheet ? 15 : 5
+        }
     }
     
     var body: some View {
@@ -35,7 +39,8 @@ struct MusicInfo: View {
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: size.width, height: size.height)
-                            .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
+                            .clipShape(RoundedRectangle(cornerRadius: Constants.imageArtworkCornerRaius(expandSheet), 
+                                                        style: .continuous))
                     }
                     .matchedGeometryEffect(id: "ARTWORK", in: animation)
                 }

@@ -12,11 +12,18 @@ struct ExpandedPlayer: View {
     private struct Constants {
         static var grabIndicatorSize: CGSize = CGSize(width: 40, height: 5)
         static var horizontalPadding: CGFloat = 25
-        static var artoworkCornerRadius: CGFloat = 15
-        
+        static var animationDuration: CGFloat = 0.35
         
         static func artworkWidth() -> CGFloat {
             horizontalPadding * 2
+        }
+        
+        static func playerVerticalPadding(size: CGSize) -> CGFloat {
+            size.height < 700 ? 10 : 30
+        }
+        
+        static func imageArtworkCornerRaius(_ animateContent: Bool) -> CGFloat {
+            animateContent ? 15 : 5
         }
     }
     
@@ -25,6 +32,7 @@ struct ExpandedPlayer: View {
     var animation: Namespace.ID
     
     @State private var animateContent = false
+    @State private var offsetY: CGFloat = 0
     
     var body: some View {
         GeometryReader {
@@ -32,10 +40,10 @@ struct ExpandedPlayer: View {
             let safeAreaInsets = $0.safeAreaInsets
             
             ZStack {
-                Rectangle()
+                RoundedRectangle(cornerRadius: animateContent ? deviceCornerRadius : 0, style: .continuous)
                     .fill(.ultraThickMaterial)
                     .overlay(content: {
-                        Rectangle()
+                        RoundedRectangle(cornerRadius: animateContent ? deviceCornerRadius : 0, style: .continuous)
                             .fill(Color("BG"))
                             .opacity(animateContent ? 1 : 0)
                     })
@@ -51,6 +59,7 @@ struct ExpandedPlayer: View {
                         .fill(.gray)
                         .frame(width: Constants.grabIndicatorSize.width, height: Constants.grabIndicatorSize.height)
                         .opacity(animateContent ? 1 : 0)
+                        .offset(y: animateContent ? 0 : size.height)
                     
                     GeometryReader {
                         let size = $0.size
@@ -59,29 +68,45 @@ struct ExpandedPlayer: View {
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: size.width, height: size.height)
-                            .clipShape(RoundedRectangle(cornerRadius: Constants.artoworkCornerRadius, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
+                            .clipShape(RoundedRectangle(cornerRadius: Constants.imageArtworkCornerRaius(animateContent),
+                                                        style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
                     }
                     .matchedGeometryEffect(id: "ARTWORK", in: animation)
                     //the height is derived by the width - the horizontal padding (x2)
                     .frame(height: size.width - Constants.artworkWidth())
+                    .padding(.vertical, Constants.playerVerticalPadding(size: size))
+                    
+                    PlayerView(mainSize: size)
+                        .offset(y: animateContent ? 0 : size.height)
                 }
                 .padding(.top, safeAreaInsets.top + (safeAreaInsets.bottom == 0 ? 10 : 0))
                 .padding(.bottom, safeAreaInsets.bottom == 0 ? 10 : safeAreaInsets.bottom)
                 .padding(.horizontal, Constants.horizontalPadding)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                // Animation test
-                .onTapGesture {
-                    withAnimation(.easeInOut(duration: 0.3)) {
-                        expandSheet = false
-                        animateContent = false
-                    }
-                }
+                .clipped()
             }
-            
+            .contentShape(Rectangle())
+            .offset(y: offsetY)
+            .gesture(
+                DragGesture()
+                    .onChanged({ value in
+                        let translationY = value.translation.height
+                        offsetY = translationY > 0 ? translationY : 0
+                    }).onEnded({ value in
+                        withAnimation(.easeInOut(duration: 0.3)) {
+                            if offsetY > size.height * 0.4 {
+                                expandSheet = false
+                                animateContent = false
+                            } else {
+                                offsetY = .zero
+                            }
+                        }
+                    })
+            )
             .ignoresSafeArea(.container, edges: .all)
         }
         .onAppear {
-            withAnimation(.easeInOut(duration: 0.35)) {
+            withAnimation(.easeInOut(duration: Constants.animationDuration)) {
                 animateContent = true
             }
         }
