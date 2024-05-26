@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct MusiPlayerApp: App {
+    
+    @StateObject var audioViewModel = AudioPlayerViewModel()
+    
     var body: some Scene {
         WindowGroup {
             Home()
+                .environmentObject(audioViewModel)
         }
     }
 }

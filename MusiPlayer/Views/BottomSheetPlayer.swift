@@ -25,7 +25,6 @@ struct BottomSheetPlayer: View {
                         Rectangle()
                             .fill(.gray.opacity(0.3))
                             .frame(height: 1)
-                            .offset(y: -5)
                     })
                     .overlay {
                         MusicInfo(expandSheet: $expandSheet, animation: animation)

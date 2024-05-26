@@ -87,5 +87,4 @@ struct MusicInfo: View {
 
 #Preview {
     ContentView()
-    //MusicInfo(expandSheet: .constant(false), animation: Namespace.ID() )
 }

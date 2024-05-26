@@ -12,21 +12,29 @@ struct Home: View {
     @State private var expandSheet: Bool = false
     @Namespace private var animation
     
+    @EnvironmentObject var audioViewModel: AudioPlayerViewModel
+    
     private struct Constants {
         static var defaultTabBarHeight: CGFloat = 49
     }
     
     var body: some View {
         TabView {
-            sampleTab(title: "Listen now", image: "play.circle.fill")
+            CuratedView()
+                .tabItem { 
+                    Image(systemName: "shared.with.you")
+                    Text("For you")
+                }
             sampleTab(title: "Browse", image: "square.grid.2x2.fill")
             sampleTab(title: "Radio", image: "dot.radiowaves.left.and.right")
             sampleTab(title: "Music", image: "magnifyingglass")
         }
         .tint(.purple)
         .safeAreaInset(edge: .bottom) {
-            BottomSheetPlayer(expandSheet: $expandSheet, animation: animation)
+            BottomSheetPlayer(expandSheet: $expandSheet,
+                              animation: animation)
                 .offset(y: -Constants.defaultTabBarHeight)
+                .opacity(audioViewModel.isPlaying ? 1 : 0)
         }
         .overlay {
             if expandSheet {
