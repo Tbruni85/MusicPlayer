@@ -27,7 +27,7 @@ struct ExpandedPlayer: View {
         }
     }
     
-    
+    @EnvironmentObject var audioViewModel: AudioPlayerViewModel
     @Binding var expandSheet: Bool
     var animation: Namespace.ID
     
@@ -64,7 +64,7 @@ struct ExpandedPlayer: View {
                     GeometryReader {
                         let size = $0.size
                         
-                        Image("Artwork")
+                        Image(audioViewModel.activeSong?.artwork ?? "artwork_placeholder")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: size.width, height: size.height)

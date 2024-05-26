@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MusicInfo: View {
     
+    @EnvironmentObject var audioViewModel: AudioPlayerViewModel
     @Binding var expandSheet: Bool
     var animation: Namespace.ID
     
@@ -35,7 +36,7 @@ struct MusicInfo: View {
                     GeometryReader {
                         let size = $0.size
                         
-                        Image("Artwork")
+                        Image(audioViewModel.activeSong?.artwork ?? "artwork_placeholder")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: size.width, height: size.height)
@@ -46,31 +47,28 @@ struct MusicInfo: View {
                 }
             }
             .frame(width: Constants.artworkFrame.width, height: Constants.artworkFrame.height)
-            
-           
-            
-            Text("Don't give up on me now")
-                .fontWeight(.semibold)
-                .lineLimit(1)
-                .padding(.horizontal, Constants.titleHorizontalPadding)
-            
-            Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
-            
-            Button {
+            VStack(alignment: .leading) {
+                Text(audioViewModel.activeSong?.song ?? "")
+                    .fontWeight(.semibold)
+                    .lineLimit(1)
+                    .padding(.horizontal, Constants.titleHorizontalPadding)
                 
-            } label: {
-                Image(systemName: "pause.fill")
-                    .font(.title2)
+                Text(audioViewModel.activeSong?.artist ?? "")
+                    .font(.system(size: 13))
+                    .fontWeight(.light)
+                    .lineLimit(1)
+                    .padding(.horizontal, Constants.titleHorizontalPadding)
             }
             
+            Spacer()
+            
             Button {
-                
+                audioViewModel.playOrPause()
             } label: {
-                Image(systemName: "forward.fill")
-                    .font(.title2)
+                Image(systemName: audioViewModel.isPlaying ? "pause.fill" : "play.fill")
+                    .font(.title)
             }
-            .padding(.leading, Constants.buttonLeadingPadding)
-
+            .padding(.trailing, 20)
         }
         .foregroundColor(.primary)
         .padding(.horizontal)

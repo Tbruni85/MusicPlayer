@@ -34,7 +34,7 @@ struct Home: View {
             BottomSheetPlayer(expandSheet: $expandSheet,
                               animation: animation)
                 .offset(y: -Constants.defaultTabBarHeight)
-                .opacity(audioViewModel.isPlaying ? 1 : 0)
+                .opacity(audioViewModel.activeSong != nil ? 1 : 0)
         }
         .overlay {
             if expandSheet {
