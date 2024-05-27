@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BottomSheetPlayer: View {
     
+    @EnvironmentObject var audioViewModel: AudioPlayerViewModel
     @Binding var expandSheet: Bool
     var animation: Namespace.ID
     
