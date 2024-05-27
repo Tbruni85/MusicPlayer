@@ -1,0 +1,17 @@
+[
+    {
+       "image":"goku_feed",
+       "name":"Goku",
+       "details": "22.2k uses • 1.7k likes • Oda"
+    },
+    {
+        "image":"trump_feed",
+        "name":"Donald Trump",
+        "details": "55.3k uses • 1k likes • BurntKnight"
+    },
+    {
+        "image":"griffin_feed",
+        "name":"Peter Griffin",
+        "details": "37.3k uses • 1k likes • Stewie2001"
+    }
+ ]

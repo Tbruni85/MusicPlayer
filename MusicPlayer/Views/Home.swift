@@ -25,7 +25,11 @@ struct Home: View {
                     Image(systemName: "shared.with.you")
                     Text("For you")
                 }
-            sampleTab(title: "Browse", image: "square.grid.2x2.fill")
+            FeedsView()
+                .tabItem {
+                    Image(systemName: "newspaper")
+                    Text("Feeds")
+                }
             sampleTab(title: "Radio", image: "dot.radiowaves.left.and.right")
             sampleTab(title: "Music", image: "magnifyingglass")
         }
