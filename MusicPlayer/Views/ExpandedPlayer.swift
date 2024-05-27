@@ -105,6 +105,7 @@ struct ExpandedPlayer: View {
             )
             .ignoresSafeArea(.container, edges: .all)
         }
+        
         .onAppear {
             withAnimation(.easeInOut(duration: Constants.animationDuration)) {
                 animateContent = true

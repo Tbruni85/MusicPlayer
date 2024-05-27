@@ -30,7 +30,11 @@ struct Home: View {
                     Image(systemName: "newspaper")
                     Text("Feeds")
                 }
-            sampleTab(title: "Radio", image: "dot.radiowaves.left.and.right")
+            FavouritesView()
+                .tabItem {
+                    Image(systemName: "star")
+                    Text("Favourites")
+                }
             sampleTab(title: "Music", image: "magnifyingglass")
         }
         .tint(.purple)

@@ -10,7 +10,6 @@ import SwiftUI
 struct CuratedView: View {
     
     @EnvironmentObject var audioViewModel: AudioPlayerViewModel
-   
     
     var body: some View {
         NavigationStack {

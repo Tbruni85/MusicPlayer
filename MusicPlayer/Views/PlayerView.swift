@@ -24,6 +24,7 @@ struct PlayerView: View {
     }
     
     var mainSize: CGSize
+    @State private var actionSheetPresented = false
     
     var body: some View {
         GeometryReader { proxy in
@@ -42,7 +43,7 @@ struct PlayerView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         
                         Button {
-                            
+                            actionSheetPresented.toggle()
                         } label: {
                             Image(systemName: "ellipsis")
                                 .foregroundColor(.white)
@@ -104,6 +105,11 @@ struct PlayerView: View {
                     .buttonRepeatBehavior(.enabled)
                 }
                 .foregroundColor(.white)
+            }
+        }
+        .confirmationDialog("Options", isPresented: $actionSheetPresented, titleVisibility: .visible) {
+            Button(audioViewModel.isFavourite() ? "Remove from favourites" : "Add to favourites") {
+                audioViewModel.isFavourite() ? audioViewModel.removeFromFavourite() : audioViewModel.addToFav()
             }
         }
     }

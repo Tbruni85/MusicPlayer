@@ -14,10 +14,11 @@ class AudioPlayerViewModel: ObservableObject {
     private var audioPlayer: AVAudioPlayer!
     private var timer: Timer?
     var activeSong: Song?
-    
+
     @Published var isPlaying = false
     @Published var currentTime: String = "0:00"
     @Published var currentPercentage: CGFloat = 0
+    @Published var favSongs: [Song] = []
     
     func loadTrack(song: Song) {
         if let sound = Bundle.main.path(forResource: song.song, ofType: "mp3") {
@@ -81,5 +82,39 @@ class AudioPlayerViewModel: ObservableObject {
     func updateTrackTime() {
         currentTime = String(format: "%02d:%02d", ((Int)(audioPlayer.currentTime)) / 60, ((Int)(audioPlayer.currentTime)) % 60)
         currentPercentage = CGFloat(audioPlayer.currentTime / audioPlayer.duration)
+    }
+}
+
+// MARK: Favourites handling
+extension AudioPlayerViewModel {
+    
+    func addToFav() {
+        guard let song = activeSong else {
+            return
+        }
+        
+        if isFavourite() {
+            return
+        }
+        
+        favSongs.append(song)
+    }
+    
+    func isFavourite() -> Bool {
+        guard let song = activeSong else {
+            return false
+        }
+        
+        return favSongs.contains {
+            $0 == song
+        }
+    }
+    
+    func removeFromFavourite() {
+        guard let song = activeSong, let index = favSongs.firstIndex(of:song) else {
+            return
+        }
+        
+        favSongs.remove(at: index)
     }
 }

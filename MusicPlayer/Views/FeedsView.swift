@@ -20,7 +20,7 @@ struct FeedsView: View {
                     }
                 }
             }
-            .navigationTitle("News")
+            .navigationTitle("Feeds")
         }
     }
 }
