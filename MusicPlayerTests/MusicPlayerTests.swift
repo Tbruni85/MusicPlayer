@@ -1,12 +1,12 @@
 //
-//  MusiPlayerTests.swift
-//  MusiPlayerTests
+//  MusicPlayerTests.swift
+//  MusicPlayerTests
 //
 //  Created by Tiziano Bruni on 24/05/2024.
 //
 
 import XCTest
-@testable import MusiPlayer
+@testable import MusicPlayer
 
 final class MusicPlayerTests: XCTestCase {
 

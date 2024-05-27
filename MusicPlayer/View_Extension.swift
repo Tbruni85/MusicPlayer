@@ -1,6 +1,6 @@
 //
 //  View_Extension.swift
-//  MusiPlayer
+//  MusicPlayer
 //
 //  Created by Tiziano Bruni on 26/05/2024.
 //

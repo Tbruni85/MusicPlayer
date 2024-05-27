@@ -1,6 +1,6 @@
 //
-//  MusiPlayerUITestsLaunchTests.swift
-//  MusiPlayerUITests
+//  MusicPlayerUITestsLaunchTests.swift
+//  MusicPlayerUITests
 //
 //  Created by Tiziano Bruni on 24/05/2024.
 //
