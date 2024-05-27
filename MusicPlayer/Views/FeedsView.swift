@@ -21,6 +21,7 @@ struct FeedsView: View {
                 }
             }
             .navigationTitle("Feeds")
+            .padding(.bottom, 70)
         }
     }
 }
