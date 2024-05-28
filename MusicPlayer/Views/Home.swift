@@ -25,24 +25,41 @@ struct Home: View {
                     Image(systemName: "shared.with.you")
                     Text("For you")
                 }
+                .toolbarBackground(.visible, for: .tabBar)
+                .toolbarBackground(.ultraThinMaterial, for: .tabBar)
+                .toolbar(expandSheet ? .hidden : .visible, for: .tabBar)
             FeedsView()
                 .tabItem {
                     Image(systemName: "newspaper")
                     Text("Feeds")
                 }
+                .toolbarBackground(.visible, for: .tabBar)
+                .toolbarBackground(.ultraThinMaterial, for: .tabBar)
+                .toolbar(expandSheet ? .hidden : .visible, for: .tabBar)
             FavouritesView()
                 .tabItem {
                     Image(systemName: "star")
                     Text("Favourites")
                 }
-            sampleTab(title: "Music", image: "magnifyingglass")
+                .toolbarBackground(.visible, for: .tabBar)
+                .toolbarBackground(.ultraThinMaterial, for: .tabBar)
+                .toolbar(expandSheet ? .hidden : .visible, for: .tabBar)
+            
+            LiveRadioView()
+                .tabItem {
+                    Image(systemName: "dot.radiowaves.left.and.right")
+                    Text("Live Radio")
+                }
+                .toolbarBackground(.visible, for: .tabBar)
+                .toolbarBackground(.ultraThinMaterial, for: .tabBar)
+                .toolbar(expandSheet ? .hidden : .visible, for: .tabBar)
         }
         .tint(.purple)
         .safeAreaInset(edge: .bottom) {
             BottomSheetPlayer(expandSheet: $expandSheet,
                               animation: animation)
                 .offset(y: -Constants.defaultTabBarHeight)
-                .opacity(audioViewModel.activeSong != nil ? 1 : 0)
+                .opacity(audioViewModel.isMiniPlayerVisible)
         }
         .overlay {
             if expandSheet {
@@ -50,21 +67,6 @@ struct Home: View {
                     .transition(.asymmetric(insertion: .identity, removal: .offset(y: -5)))
             }
         }
-    }
-    
-    @ViewBuilder func sampleTab(title: String, image: String) -> some View {
-        // iOS bug when animating tabBar items, avoided using a ScrollView as wrapper
-        ScrollView(.vertical, showsIndicators: false) {
-            Text(title)
-                .padding(.top, 25)
-        }
-        .tabItem {
-            Image(systemName: image)
-            Text(title)
-        }
-        .toolbarBackground(.visible, for: .tabBar)
-        .toolbarBackground(.ultraThinMaterial, for: .tabBar)
-        .toolbar(expandSheet ? .hidden : .visible, for: .tabBar)
     }
 }
 

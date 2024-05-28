@@ -9,23 +9,36 @@ import AVFoundation
 
 class AudioPlayerViewModel: ObservableObject {
     
+    enum PlayerType {
+        case local
+        case stream
+        case none
+    }
+    
     let songs = Bundle.main.decode([Song].self, from: "Songs.json")
+    let radios = Bundle.main.decode([Radio].self, from: "Radios.json")
     
     private var audioPlayer: AVAudioPlayer!
+    private var player: AVPlayer!
+    private var playerObserver: Any!
     private var timer: Timer?
+    
     var activeSong: Song?
-
+    var activeStream: Radio?
+    
     @Published var isPlaying = false
     @Published var currentTime: String = "0:00"
     @Published var currentPercentage: CGFloat = 0
     @Published var favSongs: [Song] = []
+    @Published var playerType: PlayerType = .none
     
     func loadTrack(song: Song) {
         if let sound = Bundle.main.path(forResource: song.song, ofType: "mp3") {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound))
+                playerType = .local
                 activeSong = song
-                playOrPause()
+                audioPlayerPlayPause()
             } catch {
                 print("AVAudioPlayer could not be instantiated.")
             }
@@ -34,7 +47,50 @@ class AudioPlayerViewModel: ObservableObject {
         }
     }
     
-    func playOrPause() {
+    func streamURL(radio: Radio) {
+        guard let url = URL(string: radio.stream) else {
+            print("Malformed URL")
+            return
+        }
+        
+        let asset = AVAsset(url: url)
+        let item = AVPlayerItem(asset: asset)
+        player = AVPlayer(playerItem: item)
+        playerType = .stream
+        streamPlayPause()
+        activeStream = radio
+        
+        if audioPlayer != nil {
+            if audioPlayer.isPlaying {
+                audioPlayerPlayPause()
+            }
+        }
+    }
+    
+    func streamPlayPause() {
+        guard let player = player else {
+            return
+        }
+        
+        if playerType == .stream {
+            player.play()
+            playerObserver = player.addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 600), queue: DispatchQueue.main, using: { [weak self] time in
+                if self?.player.currentItem?.status == .readyToPlay {
+                    self?.isPlaying = true
+                }
+            })
+        } else {
+            player.pause()
+            isPlaying = false
+            if let token = playerObserver {
+                player.removeTimeObserver(token)
+                playerObserver = nil
+            }
+        }
+    }
+    
+    func audioPlayerPlayPause() {
+        streamPlayPause()
         
         if audioPlayer.isPlaying {
             audioPlayer.pause()
@@ -47,6 +103,14 @@ class AudioPlayerViewModel: ObservableObject {
             isPlaying = true
             guard timer == nil else { return }
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTrackTime), userInfo: nil, repeats: true)
+        }
+    }
+    
+    func playOrPause() {
+        if playerType == .stream {
+            streamPlayPause()
+        } else if playerType == .local {
+            audioPlayerPlayPause()
         }
     }
     
@@ -75,13 +139,62 @@ class AudioPlayerViewModel: ObservableObject {
     }
     
     var trackLength: String {
-        String(format: "%02d:%02d", ((Int)(audioPlayer.duration)) / 60, ((Int)(audioPlayer.duration)) % 60)
+        guard let audioPlayer = audioPlayer else {
+            return  "--:--"
+        }
+        
+        return String(format: "%02d:%02d", ((Int)(audioPlayer.duration)) / 60, ((Int)(audioPlayer.duration)) % 60)
     }
     
     @objc
     func updateTrackTime() {
-        currentTime = String(format: "%02d:%02d", ((Int)(audioPlayer.currentTime)) / 60, ((Int)(audioPlayer.currentTime)) % 60)
-        currentPercentage = CGFloat(audioPlayer.currentTime / audioPlayer.duration)
+        
+        guard let audioPlayer = audioPlayer else {
+            return
+        }
+        if audioPlayer.isPlaying {
+            currentTime = String(format: "%02d:%02d", ((Int)(audioPlayer.currentTime)) / 60, ((Int)(audioPlayer.currentTime)) % 60)
+            currentPercentage = CGFloat(audioPlayer.currentTime / audioPlayer.duration)
+        }
+    }
+    
+    var isMiniPlayerVisible: Double {
+        activeSong != nil ? 1 : 0
+    }
+    
+    var playerImage: String {
+        switch playerType {
+        case .local:
+            activeSong?.artwork ?? "artwork_placeholder"
+        case .stream:
+            activeStream?.image ?? "artwork_placeholder"
+        case .none:
+            "artwork_placeholder"
+        }
+    }
+    
+    var currentArtist: String {
+        
+        switch playerType {
+        case .local:
+            activeSong?.artist ?? "Unknown"
+        case .stream:
+            activeStream?.name ?? "Unknown"
+        case .none:
+            "Unknown"
+        }
+    }
+    
+    var currentSong: String {
+        
+        switch playerType {
+        case .local:
+            activeSong?.song ?? "Unknown"
+        case .stream:
+            "Live radio"
+        case .none:
+            "Unknown"
+        }
     }
 }
 

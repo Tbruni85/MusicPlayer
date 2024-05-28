@@ -1,0 +1,12 @@
+[
+    {
+       "image":"virgin_radio",
+       "name":"Virgin Radio UK",
+       "stream": "https://radio.virginradio.co.uk/stream?aw_0_1st.platform=website&aw_0_1st.playerid=broadcast-web-virginradio"
+    },
+    {
+        "image":"rock_radio",
+        "name":"Rock Radio",
+        "stream": "https://stream.starfm.de/hardrock/mp3-128/"
+    }
+ ]

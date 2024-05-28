@@ -39,7 +39,7 @@ struct MusicInfo: View {
                             GeometryReader {
                                 let size = $0.size
                                 
-                                Image(audioViewModel.activeSong?.artwork ?? "artwork_placeholder")
+                                Image(audioViewModel.playerImage)
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: size.width, height: size.height)
@@ -51,12 +51,12 @@ struct MusicInfo: View {
                     }
                     .frame(width: Constants.artworkFrame.width, height: Constants.artworkFrame.height)
                     VStack(alignment: .leading) {
-                        Text(audioViewModel.activeSong?.song ?? "")
+                        Text(audioViewModel.currentSong)
                             .fontWeight(.semibold)
                             .lineLimit(1)
                             .padding(.horizontal, Constants.titleHorizontalPadding)
                         
-                        Text(audioViewModel.activeSong?.artist ?? "")
+                        Text(audioViewModel.currentArtist)
                             .font(.system(size: 13))
                             .fontWeight(.light)
                             .lineLimit(1)
@@ -87,7 +87,7 @@ struct MusicInfo: View {
                     Capsule()
                         .fill(.purple)
                         .environment(\.colorScheme, .light)
-                        .frame(width: proxy.size.width * audioViewModel.currentPercentage, height: 2)
+                        .frame(width: audioViewModel.playerType == .stream ? nil : proxy.size.width * audioViewModel.currentPercentage, height: 2)
                         .animation(.easeInOut, value: audioViewModel.currentPercentage)
                 }
                 .offset(y: -10)

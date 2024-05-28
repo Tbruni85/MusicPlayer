@@ -34,10 +34,10 @@ struct PlayerView: View {
                 VStack(spacing: spacing) {
                     HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 15) {
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(audioViewModel.activeSong?.song ?? "")
+                            Text(audioViewModel.currentSong)
                                 .font(.title3)
                                 .fontWeight(.semibold)
-                            Text(audioViewModel.activeSong?.artist ?? "")
+                            Text(audioViewModel.currentArtist)
                                 .foregroundColor(.gray)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -53,6 +53,7 @@ struct PlayerView: View {
                                         .fill(.ultraThinMaterial)
                                         .environment(\.colorScheme, .light)
                                 }
+                                .opacity(audioViewModel.playerType == .stream ? 0 : 1)
                         }
                     }
                     
@@ -66,17 +67,17 @@ struct PlayerView: View {
                         Capsule()
                             .fill(.purple)
                             .environment(\.colorScheme, .light)
-                            .frame(width: proxy.size.width * audioViewModel.currentPercentage, height: 5)
+                            .frame(width: audioViewModel.playerType == .stream ? nil : proxy.size.width * audioViewModel.currentPercentage, height: 5)
                             .padding(.top, spacing)
                             .animation(.easeInOut, value: audioViewModel.currentPercentage)
                     }
                     
                     HStack {
-                        Text(audioViewModel.currentTime)
+                        Text(audioViewModel.playerType == .local ? audioViewModel.currentTime : "--:--")
                             .font(.caption)
                             .foregroundColor(.gray)
                         Spacer()
-                        Text(audioViewModel.trackLength)
+                        Text(audioViewModel.playerType == .local ? audioViewModel.trackLength : "--:--")
                             .font(.caption)
                             .foregroundColor(.gray)
                     }

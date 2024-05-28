@@ -64,7 +64,7 @@ struct ExpandedPlayer: View {
                     GeometryReader {
                         let size = $0.size
                         
-                        Image(audioViewModel.activeSong?.artwork ?? "artwork_placeholder")
+                        Image(audioViewModel.playerImage)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: size.width, height: size.height)
