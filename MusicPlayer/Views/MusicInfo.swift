@@ -65,13 +65,8 @@ struct MusicInfo: View {
                     
                     Spacer()
                     
-                    Button {
-                        audioViewModel.playOrPause()
-                    } label: {
-                        Image(systemName: audioViewModel.isPlaying ? "pause.fill" : "play.fill")
-                            .font(.title)
-                    }
-                    .padding(.trailing, 20)
+                    CustomPlayerButton(dropSize: 45, iconWeight: 30)
+                        .tint(.primary)
                 }
                 .foregroundColor(.primary)
                 .padding(.horizontal)
@@ -93,6 +88,7 @@ struct MusicInfo: View {
                         .fill(.purple)
                         .environment(\.colorScheme, .light)
                         .frame(width: proxy.size.width * audioViewModel.currentPercentage, height: 2)
+                        .animation(.easeInOut, value: audioViewModel.currentPercentage)
                 }
                 .offset(y: -10)
             }

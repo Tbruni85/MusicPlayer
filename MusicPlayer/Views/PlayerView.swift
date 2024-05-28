@@ -68,6 +68,7 @@ struct PlayerView: View {
                             .environment(\.colorScheme, .light)
                             .frame(width: proxy.size.width * audioViewModel.currentPercentage, height: 5)
                             .padding(.top, spacing)
+                            .animation(.easeInOut, value: audioViewModel.currentPercentage)
                     }
                     
                     HStack {
@@ -89,12 +90,8 @@ struct PlayerView: View {
                     }
                     .buttonRepeatBehavior(.enabled)
                     
-                    Button {
-                        audioViewModel.playOrPause()
-                    } label: {
-                        Image(systemName: audioViewModel.isPlaying ? "pause.fill" : "play.fill")
-                            .font(Constants.playerMainButtonFont(size: proxy.size))
-                    }
+                    CustomPlayerButton(dropSize: 85, iconWeight: 60)
+                        .tint(.primary)
                     
                     Button {
                         audioViewModel.forwardTrack()
