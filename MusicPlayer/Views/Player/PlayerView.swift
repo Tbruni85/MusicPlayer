@@ -90,6 +90,8 @@ struct PlayerView: View {
                             .font(Constants.playerButtonFont(size: proxy.size))
                     }
                     .buttonRepeatBehavior(.enabled)
+                    .foregroundColor(audioViewModel.playerType == .stream ? .gray : .primary)
+                    .disabled(audioViewModel.playerType == .stream)
                     
                     CustomPlayerButton(dropSize: 85, iconWeight: 60)
                         .tint(.primary)
@@ -101,8 +103,10 @@ struct PlayerView: View {
                             .font(Constants.playerButtonFont(size: proxy.size))
                     }
                     .buttonRepeatBehavior(.enabled)
+                    .foregroundColor(audioViewModel.playerType == .stream ? .gray : .primary)
+                    .disabled(audioViewModel.playerType == .stream)
                 }
-                .foregroundColor(.white)
+                
             }
         }
         .confirmationDialog("Options", isPresented: $actionSheetPresented, titleVisibility: .visible) {

@@ -72,7 +72,7 @@ class AudioPlayerViewModel: ObservableObject {
             return
         }
         
-        if playerType == .stream {
+        if !isPlaying {
             player.play()
             playerObserver = player.addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 600), queue: DispatchQueue.main, using: { [weak self] time in
                 if self?.player.currentItem?.status == .readyToPlay {
@@ -159,7 +159,7 @@ class AudioPlayerViewModel: ObservableObject {
     }
     
     var isMiniPlayerVisible: Double {
-        activeSong != nil ? 1 : 0
+        isPlaying ? 1 : 0
     }
     
     var playerImage: String {
